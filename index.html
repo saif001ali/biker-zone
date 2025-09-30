@@ -1,6 +1,8 @@
 <!-- html boilerPlate -->
 <!DOCTYPE html>
-<html lang="en">
+<!-- when data-theme="light" is set no matter what OS or search engine theme is this website always will be LIGHT. by default
+ daisyUI has both light and dark setting  -->
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- google font poppin, inter, manrope CDN -->
+    <!-- google font poppins, inter, manrope CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -35,8 +37,45 @@
 
 <body>
     <!-- header section -->
-    <header>
-
+    <header class="md:container mx-auto">
+        <nav>
+            <!-- To make navbar-center and navbar-end stick together at the end, 
+             we can EITHER put them in flex container and then that container and navbar-start in a justified-between FLEX container
+             OR,
+             we can remove the daisyUI classes and write flex-1 in navbar-start div which gives it all space as possible.  -->
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>News</a></li>
+                            <li><a>Contact</a></li>
+                        </ul>
+                    </div>
+                    <a class="font-bold text-xl">Biker Zone</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>News</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <a class="btn btn-error">Login</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- main section -->
